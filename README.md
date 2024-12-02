@@ -1,7 +1,10 @@
+# Short Form Notes about C++
+
 C++ is an object oriented language created by Bjourne Stroustroup. It's a compiled language meaning it has to be compiled all at once into a binary program that a machine can run.
 
 **Compilation** is the entire process of **translating C++ code** into code that the computer can understand.
 The entire process has multiple stages:
+
 - **Preprocessing**: Handles preprocessor directives (like `#include`) and expands macros.
 - **Compilation**: Translates C++ into assembly code.
 - **Assembly**: Converts assembly to machine code.
@@ -18,26 +21,30 @@ The entire process has multiple stages:
 [[#Structs and Enums]]
 [[#Exceptions]]
 [[#File Handling]]
-# Basics
+
+## Basics
 
 Every C++ program needs to have an entry point called main
 
 ```C++
 int main() 
 {
-	return 0; // This is a code that is sent to the operating system,
-	// It's just a convention that signifies the program ran successfuly 
+    return 0; // This is a code that is sent to the operating system,
+    // It's just a convention that signifies the program ran successfuly 
 }
 ```
 
 In order to print anything on the console you can use this code:
+
 ```C++
+
 std::cout << "Hello, World!\n"; // \n means new line
 // It's werid syntax but you'll understand "<<" later...hopefully
 ```
 
 Variables are places created in memory to save data that the program needs.
 Every variable has these caracteristics:
+
 * name (or identifier)
 * value (What value it stores)
 * type (What type the variable is)
@@ -58,6 +65,7 @@ There are a few important data types defined in C++ by default:
 * short (2 bytes)
 * char (1 byte)
 * bool
+
 ```C++
 int integer = 5;
 float floatingNumber = 3.54f; // it has less precision than double
@@ -69,9 +77,11 @@ bool boolean = true;
 ASCII is an old standard of codifying English Characters into numbers so that they can be represented by binary numbers. a char is simply one byte for that reason.
 
 These are known as the **Fundamental Types** and they are inexpensive to create and use.
+
 ## Operators
 
 C++ contians a concept called **operators** which are similar to operators in math, however it covers a lot more operations in C++.
+
 ### Arithmetic Operators
 
 * addition: + (a+b)
@@ -107,6 +117,7 @@ int y;
 std::cin >> x;
 std::cin >> x >> y; // You can chainload input reading
 ```
+
 # Control Flow
 
 Programs get fun when you can change the route of your program based on the data you have.
@@ -142,6 +153,7 @@ boolean_expression ? "do something" : "else do something else";
 ```
 
 This is the only operator that takes in *three* operands. It is usually used for simple one line cases of if-else statements.
+
 ## Loops
 
 There are four types of loops:
