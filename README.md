@@ -10,18 +10,6 @@ The entire process has multiple stages:
 - **Assembly**: Converts assembly to machine code.
 - **Linking**: Combines multiple files and resolves external symbols to create the final executable.
 
-*Headings:*
-
-[[#Basics]]
-[[#Control Flow]]
-[[#Arrays]]
-[[#Functions]]
-[[#References]]
-[[#Pointers]]
-[[#Structs and Enums]]
-[[#Exceptions]]
-[[#File Handling]]
-
 ## Basics
 
 Every C++ program needs to have an entry point called main
