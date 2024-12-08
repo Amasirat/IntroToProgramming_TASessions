@@ -47,12 +47,12 @@ C++ came with the solution of making the programmer **dictate** what type the va
 There are a few important data types defined in C++ by default:
 
 * int (4 bytes on most computers, however some old compilers could make it 2 bytes)
-* float (4 bytes)
-* double (8 bytes)
-* long
+* float (at most 4 bytes)
+* double (at least 8 bytes)
+* long (at least 4 bytes, can also reach 8 bytes)
 * short (2 bytes)
 * char (1 byte)
-* bool
+* bool (1 bit)
 
 ```C++
 int integer = 5;
@@ -133,6 +133,10 @@ else
 ```
 
 What goes into the if paranthesis has to be either evaluated to a boolean expression or be type-casted into one either explicitly or implicitly by the compiler.
+The good thing about else and else if is that If the expression inside the if() is true, then only if is run and not the else or else if blocks.
+
+If the parenthesis inside if is false, then else if is run, and if even that is false then else is **always** run.
+
 
 There's an operator that handles a similar thing in less limited cases known as the ? operator.
 
@@ -142,6 +146,42 @@ boolean_expression ? "do something" : "else do something else";
 
 This is the only operator that takes in *three* operands. It is usually used for simple one line cases of if-else statements.
 
+## Logical Operators
+
+Along with mathematical operators, there are also logical operators that take in two logical statements and give back their truth or false state.
+First of all, a new data type should be introduced!
+
+bool is a data type that has only one bit! 0 for false and 1 for true.
+The name comes from Boolean, the mathematician responsible for Boolean Algebra that works completely with true and false values.
+
+* &&: and operator
+* ||: or operator
+* !: not operator
+* ==: equality
+* \>: greater than
+* \<: smaller than
+* \>=: greater than or equal
+* \<=: smaller than or equal
+
+```C++
+bool a = true;
+bool b = false;
+bool c = a && b; // a and b, c will be false
+bool d = a || b; // a or b, d will be true
+
+bool e = !a; // e will be false
+bool f = !b; // f will be true
+
+int a = 1;
+int b = 0;
+bool c = a == b; // c will be false
+bool d = a != b; // d will be true
+bool e = a > b; // e will be true
+bool f = a < b; // f will be false
+bool g = a <= b; // g will be false
+bool h = a >= b; // h will be true
+
+```
 ## Loops
 
 There are four types of loops:
@@ -150,6 +190,100 @@ There are four types of loops:
 * **do-while**
 * **for**
 * **foreach** (discussed after introducing arrays)
+
+
+### while
+
+While the expression inside while() is true, every statement 
+written inside will run inside a loop. Its name is literally on it, 
+"while this is true, do this:"
+
+### do-while
+
+It is similar to while except the condition is checked **after one loop is done**.
+
+```C++
+int x = -1;
+do {
+	x++;
+	std::cout << "x = " << x << '\n';
+}
+while(x == 0)
+// Even though x was -1 before the do-while loop,
+// the loop will continue to run 2 times before it stops
+int x = -1;
+while(x == 0)
+{
+	std::cout << "This will never run\n";
+}
+// In this example, because x = -1 and not 0, 
+// the while loop will never be entered.
+```
+
+### for
+
+for() is basically a compact form of this idea in while loops:
+
+```C++
+int i = 1;
+while(i <= 10) {
+	std::cout << "This will run 10 times\n";
+	i++;
+}
+```
+
+Because a determined loop is common in programming,
+C/C++ come with a for construct to do the same thing above in less lines
+
+```C++
+for(int i = 1; i <= 10; i++) {
+	std::cout << "This will run 10 times\n";
+}
+// This is the for() loop translation of the above while() loop
+```
+
+Before the instructions inside the for loop are done,
+the first instruction of the for loop is done. (int i = 1, which means create a variable called i and initialize with 1)
+Next the second instruction which **has to be a boolean expression** is checked.
+Then the for loop begins and at the end, **The third statement (i++) is done**.
+
+### foreach
+
+foreach is a bit more advanced and only used for a more specific purpose, which are for collection types. You'll learn about one kind of collection types later.
+
+### break and continue
+
+There are two important keywords in C++ (honestly in most languages) that you need to know.
+
+* **break**: when break is executed, no matter what, a loop will end.
+* **continue**: When a continue is executed, the current loop ends and **starts from the beginning and checks the condition**
+
+```C++
+char usr_choice;
+while(true)
+{
+	std::cin >> usr_choice;
+	if (usr_choice == 'e') {
+		break;
+	}
+}
+```
+
+```C++
+for(int i = 0; i < 10; i++) {
+	if (i == 2) {
+		continue;
+	}
+}
+
+while(x == 0) {
+	x++;
+	if(x==1) {
+		continue; // This will go back and check condition,
+		// once it checks that 1 != 0, then the loop will end.
+	}
+}
+```
 
 # Arrays
 
