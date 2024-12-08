@@ -324,6 +324,13 @@ std::cin >> y;
 
 int array[y]; // This will not compile
 ```
+
+Alongside the C style array, there also C++ types for arrays that are much safer to use in a lot of cases. Some famous ones are:
+
+## std::array
+
+## std::vector
+
 # Functions
 
 # References
