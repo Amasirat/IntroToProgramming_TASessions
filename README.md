@@ -350,7 +350,7 @@ int* ptr = &x; // address of variable is stored inside ptr
 *We can't initialize a pointer by giving it a literal address because the compiler will treat that address as an int instead of an int\* type that a pointer needs.*
 
 ```C++
-int* ptr2 = 0X000125; // Not Allowed. Will not compile!!!!
+int* ptr2 = 0x000125; // Not Allowed. Will not compile!!!!
 ```
 
 You can dereference a pointer to get the value that its address stores:
@@ -450,6 +450,9 @@ delete[] array;
 ```
 
 *delete* needs to know that it has to de-allocate a series of memory instead of just one. It keeps track of the length of the array itself so you don't have to worry, just put a \[] at the end like that!
+
+# std::string
+
 # Structs and Enums
 
 # Exceptions
