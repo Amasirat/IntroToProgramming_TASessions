@@ -17,5 +17,7 @@ int main() {
         std::cout << "a is: " << -a << '\n';
     }
 
+    int abs_a = a >= 0 ? a : -a;
+
     return 0;
 }
