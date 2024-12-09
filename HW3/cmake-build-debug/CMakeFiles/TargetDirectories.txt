@@ -1,0 +1,3 @@
+/home/amasirat/dev/TA/basics/homework_solution/cmake-build-debug/CMakeFiles/homework_solution.dir
+/home/amasirat/dev/TA/basics/homework_solution/cmake-build-debug/CMakeFiles/edit_cache.dir
+/home/amasirat/dev/TA/basics/homework_solution/cmake-build-debug/CMakeFiles/rebuild_cache.dir
